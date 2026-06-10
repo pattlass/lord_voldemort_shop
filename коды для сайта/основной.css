@@ -1,0 +1,43 @@
+:root {
+    --bg-main: #3d281d; 
+    --bg-card: #4a3429;  
+    --accent-gold: #e2c08d; 
+    --text-white: #ffffff;  
+    --text-gray: #a08a7e;
+}
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar { display: none; }
+body { scrollbar-width: none; }
+
+
+.cta-button, .btn-magic {
+    background: transparent;
+    border: 1px solid rgba(226, 192, 141, 0.4);
+    color: var(--accent-gold);
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--accent-gold);
+    color: var(--bg-main);
+    box-shadow: 0 0 15px rgba(226, 192, 141, 0.3);
+}
+
+/* Заголовки как на главной */
+h1, h2, h3 {
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

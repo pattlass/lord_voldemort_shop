@@ -1,0 +1,163 @@
+/* ===== 1. БАЗОВЫЕ НАСТРОЙКИ (Светлая тема и невидимый скролл) ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f9f6f2;
+    font-family: 'Arial', sans-serif;
+    color: #3d281d;
+    overflow-x: hidden; 
+}
+
+
+body::-webkit-scrollbar { display: none; }
+body { scrollbar-width: none; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. ШАПКА */
+.navbar {
+    width: 100%;
+    background-color: #3d281d;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 80px; 
+    padding: 12px 20px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover { color: #e2c08d; }
+
+/* 3. КАРТОЧКИ ПРОФИЛЯ */
+.profile-layout {
+    display: flex;
+    gap: 30px;
+    padding: 50px 0;
+}
+
+.profile-sidebar, .detail-card {
+    background-color: #ffffff;
+    border: 1px solid #e0d6cc;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(61, 40, 29, 0.05);
+}
+
+.profile-sidebar { flex: 1; padding: 40px 20px; text-align: center; }
+.profile-details { flex: 2; }
+.detail-card { padding: 45px; }
+
+.tab-content { display: none; }
+
+/*  4. МЕНЮ СЛЕВА */
+.profile-avatar img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #3d281d;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.side-nav { display: flex; flex-direction: column; gap: 8px; margin-top: 30px; }
+
+.side-nav a {
+    color: #6d4c3d;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    text-align: left;
+}
+
+/* Активная вкладка*/
+.side-nav a:hover, .side-nav a.active {
+    background-color: #f0e6dc; 
+    color: #3d281d;
+    font-weight: bold;
+}
+
+.logout { color: #d9534f !important; margin-top: 30px; font-weight: bold; }
+
+/* 5. ТЕКСТЫ И КНОПКА */
+h2, h3 {
+    color: #3d281d; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #e2c08d;
+    padding-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.info-row {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.info-row span { color: #888; font-size: 14px; }
+.info-row strong { color: #3d281d; }
+
+/* Кнопка "Изменить пароль" */
+.cta-button {
+    background: #3d281d;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.cta-button:hover { background: #5d3d2e; }
+
+/* 6. ИЗБРАННОЕ*/
+#profile-favorites div {
+    background-color: #fdfaf7;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #eee;
+}
+
+#profile-favorites strong { color: #3d281d; text-transform: none; }
+#profile-favorites span { color: #b8860b; font-weight: bold; } 
+
+.delete-btn {
+    background: transparent;
+    border: 1px solid #d9534f;
+    color: #d9534f;
+    padding: 7px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: auto;
+}
+
+.delete-btn:hover { background: #d9534f; color: white; }

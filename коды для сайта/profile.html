@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль | Lord Voldemort Shop</title>
+    <link rel="stylesheet" href="1главная.css"> <!-- Подключаем ваши основные стили -->
+    <link rel="stylesheet" href="4profile.css"> <!-- Стили конкретно для ЛК -->
+</head>
+<body>
+    <header class="navbar">
+                <div class="logo">
+                    <a href="главная.html"><img src="картинки/лев.png" alt="Logo" class="logo-img"></a>
+                </div>
+                <nav>
+                    <a href="#">О нас</a>
+                    <a href="special-offer.html">Специальные предложения</a>
+                    <a href="catalog.html">Каталог</a>
+                </nav>
+    </header>
+    <div class="container">
+        <div class="main-container">
+            
+        
+            <main class="profile-layout">
+                <!-- Боковое меню ЛК -->
+                <aside class="profile-sidebar">
+                    <div class="profile-avatar">
+                        <img src="картинки/гарри-поттер.png" alt="User">
+                    </div>
+                    <h2>Маг-исследователь</h2>
+                    <nav class="side-nav profile-menu">
+                        <!-- ID блока: personal-info-section -->
+                        <a href="#" class="active" data-tab="personal-info-section">Мои данные</a>
+                        <!-- ID блока: orders-history -->
+                        <a href="#" data-tab="orders-history">История заказов</a>
+                        <!-- ID блока: favorite-section -->
+                        <a href="#" id="show-favorites" data-tab="favorite-section">Избранные артефакты</a>
+                        
+                        <a href="главная.html" class="logout">Выйти</a>
+                    </nav>
+                               
+                </aside>
+        
+                <!-- Контентная часть -->
+                <section class="profile-details">
+                    <div class="detail-card">
+                        <!-- Вкладка 1: Мои данные (ВИДНА ПО УМОЛЧАНИЮ) -->
+                        <div id="personal-info-section" class="tab-content">
+                            <h3>ЛИЧНАЯ ИНФОРМАЦИЯ</h3>
+                            <div class="info-row"><span>Имя:</span> <strong>Гарри Поттер</strong></div>
+                            <div class="info-row"><span>Факультет:</span> <strong>Гриффиндор</strong></div>
+                            <div class="info-row"><span>Почта:</span> <strong>chosen_one@hogwarts.com</strong></div>
+                            <button class="cta-button" style="margin-top: 20px;">ИЗМЕНИТЬ</button>
+                        </div>
+        
+                        <!-- Вкладка 2: История заказов (СКРЫТА) -->
+                        <div id="orders-history" class="tab-content" style="display: none;">
+                            <h3>История заказов</h3>
+                            <p>У вас пока нет заказов.</p>
+                        </div>
+        
+                        <!-- Вкладка 3: Избранное (СКРЫТА) -->
+                        <div id="favorite-section" class="tab-content" style="display: none;">
+                            <h3>Избранные артефакты</h3>
+                            <div id="profile-favorites"></div>
+                        </div>
+                    </div>
+                </section>        
+            </main>
+        </div>
+    </div>     
+    <script src="shop.js"></script>
+    <script src="4profile.js"></script>
+</body>
+</html>

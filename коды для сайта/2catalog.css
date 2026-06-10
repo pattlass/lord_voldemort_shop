@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com');
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+   body, html {
+       width: 100%;
+       min-height: 100vh;
+       background-color: #f9f6f2;
+       font-family: 'Arial', sans-serif;
+       color: #3d281d;
+       overflow-x: hidden;
+        scrollbar-width: none;  
+        -ms-overflow-style: none;  
+}
+/* Chrome, Safari */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+   /* 2. ШАПКА */
+   .navbar {
+       height: 80px;
+       background-color: #3d281d;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 0 40px;
+       position: relative;
+       z-index: 1000;
+   }
+   .navbar nav {
+       display: flex;
+       gap: 25px;
+   }
+   .navbar nav a {
+       color: rgba(255, 255, 255, 0.7);
+       text-decoration: none;
+       font-size: 13px;
+       font-weight: bold;
+       text-transform: uppercase;
+       transition: 0.3s;
+   }
+   .navbar nav a:hover {
+       color: #e2c08d;
+   }
+   .logo-img {
+       height: 50px;
+       transition: 0.3s;
+   }
+   .logo-img:hover {
+       transform: scale(1.1);
+   }
+   .main-icon {
+       width: 24px;
+       height: 24px;
+       cursor: pointer;
+       margin-left: 20px;
+       stroke: white;
+       transition: 0.3s;
+   }
+   .main-icon:hover {
+       transform: scale(1.1);
+       stroke: #e2c08d;
+   }
+   /* 3. КАТАЛОГ */
+   .catalog-container {
+       max-width: 1200px;
+       margin: 0 auto;
+       padding: 40px 20px;
+   }
+   .top-controls {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       margin-bottom: 30px;
+   }
+   
+   /* Dropdown */
+   .custom-dropdown {
+       position: relative;
+       width: 200px;
+       cursor: pointer;
+       color: #3d281d;
+       z-index: 100;
+   }
+   
+   .dropdown-header {
+       display: flex;
+       justify-content: space-between;
+       padding: 8px 0;
+       border-bottom: 2px solid #e2c08d;
+       font-weight: bold;
+   }
+   
+   .dropdown-list {
+       position: absolute;
+       top: 100%;
+       left: 0;
+       width: 100%;
+       background-color: #ffffff;
+       border: 1px solid #e0d6cc;
+       list-style: none;
+       display: none;
+       border-radius: 0 0 10px 10px;
+       box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+   }
+   
+   .custom-dropdown.active .dropdown-list {
+       display: block;
+   }
+   
+   .dropdown-list li {
+       padding: 12px;
+       color: #6d4c3d;
+       transition: 0.3s;
+   }
+   
+   .dropdown-list li:hover {
+       background-color: #f0e6dc;
+       color: #3d281d;
+   }
+   
+   /* Поиск */
+   .search-box {
+       display: flex;
+       align-items: center;
+       border-bottom: 2px solid #e2c08d;
+   }
+   
+   .search-box input {
+       background: transparent;
+       border: none;
+       color: #3d281d;
+       padding: 8px;
+       outline: none;
+   }
+   
+   /* Чекбоксы */
+   .filter-categories {
+       display: flex;
+       gap: 25px;
+       margin: 20px 0 40px;
+   }
+   
+   .checkbox-container {
+       display: flex;
+       align-items: center;
+       cursor: pointer;
+       font-size: 14px;
+       color: #6d4c3d;
+       font-weight: bold;
+   }
+   
+   .checkbox-container input {
+       display: none;
+   }
+   
+   .checkmark {
+       height: 16px;
+       width: 16px;
+       background-color: #ffffff;
+       border: 2px solid #e2c08d;
+       margin-right: 8px;
+       border-radius: 3px;
+   }
+   
+   .checkbox-container input:checked ~ .checkmark {
+       background-color: #e2c08d;
+   }
+   
+   /* 4. КАРТОЧКИ ТОВАРОВ */
+   .product-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 40px;
+   }
+   
+   .img-wrapper {
+       background: linear-gradient(145deg, #f0e6dc, #e0d6cc);
+       border: 1px solid #e0d6cc;
+       border-radius: 20px;
+       aspect-ratio: 1 / 1.1;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 25px;
+       transition: 0.4s;
+   }
+   
+   .product-card:hover .img-wrapper {
+       transform: translateY(-8px);
+       border-color: #e2c08d;
+       box-shadow: 0 15px 30px rgba(61, 40, 29, 0.1);
+   }
+   
+   .img-wrapper img {
+       max-width: 90%;
+       filter: drop-shadow(0 15px 20px rgba(61, 40, 29, 0.3));
+   }
+   
+   .product-name {
+       font-weight: 800;
+       text-transform: uppercase;
+       font-size: 15px;
+       margin: 15px 0 5px;
+   }
+   
+   .price {
+       color: #b8860b;
+       font-weight: bold;
+       font-size: 14px;
+       margin-bottom: 12px;
+   }
+   
+   .buy-btn {
+       width: 100%;
+       background-color: #3d281d;
+       color: white;
+       border: none;
+       padding: 12px;
+       border-radius: 12px;
+       font-weight: bold;
+       text-transform: uppercase;
+       font-size: 11px;
+       cursor: pointer;
+       transition: 0.3s;
+   }
+   
+   .buy-btn:hover {
+       background-color: #5d3d2e;
+   }
+   
+   /* 5. МОДАЛЬНОЕ ОКНО */
+   .modal {
+       display: none;
+       position: fixed;
+       z-index: 2000;
+       left: 0;
+       top: 0;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(61, 40, 29, 0.5);
+       backdrop-filter: blur(8px);
+   }
+   
+   .modal-content {
+       background-color: #ffffff;
+       margin: 5% auto;
+       padding: 35px;
+       border: 2px solid #e2c08d;
+       width: 90%;
+       max-width: 650px;
+       border-radius: 25px;
+       position: relative;
+       box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+       max-height: 85vh;
+       overflow-y: auto;
+   }
+   
+   #modal-title {
+       font-weight: 800;
+       text-transform: uppercase;
+       border-bottom: 2px solid #e2c08d;
+       padding-bottom: 10px;
+       margin-bottom: 20px;
+   }
+   
+   .close-button {
+       position: absolute;
+       right: 20px;
+       top: 15px;
+       font-size: 30px;
+       cursor: pointer;
+   }
+   
+   .close-button:hover {
+       color: #d9534f;
+   }
+   
+   /* Контент внутри модалки */
+   #modal-text {
+       display: flex;
+       flex-direction: column;
+       gap: 12px;
+       padding: 10px 0;
+       width: 100%;
+   }
+   
+   /* Строки корзины и избранного */
+   .modal-item-row {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       background: #fdfaf7;
+       padding: 10px 20px;
+       border-radius: 12px;
+       border: 1px solid #eee;
+       width: 100%;
+       gap: 15px;
+   }
+   
+   .modal-item-row img {
+       width: 45px;
+       height: 45px;
+       object-fit: contain;
+       background: white;
+       border-radius: 8px;
+       padding: 3px;
+   }
+   
+   .modal-item-row .item-info {
+       flex: 1;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+   
+   .modal-item-row .item-name {
+       font-size: 14px;
+       font-weight: bold;
+       color: #3d281d;
+       text-transform: none;
+   }
+   
+   .modal-item-row .item-price {
+       color: #b8860b;
+       font-weight: bold;
+   }
+   
+   /* Поиск (2 колонки) */
+   .search-grid {
+       display: grid !important;
+       grid-template-columns: 1fr 1fr !important;
+       gap: 15px !important;
+       padding: 10px !important;
+   }
+   
+   .search-card {
+       background: #fdfaf7;
+       border: 1px solid #eee;
+       border-radius: 15px;
+       padding: 15px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+   }
+   
+   .search-card img {
+       width: 80px;
+       height: 80px;
+       object-fit: contain;
+       margin-bottom: 10px;
+   }
+   
+   .search-card .item-name {
+       font-weight: bold;
+       color: #3d281d;
+       font-size: 13px;
+       margin-bottom: 5px;
+   }
+   
+   .search-card .item-price {
+       color: #b8860b;
+       font-weight: bold;
+       margin-bottom: 10px;
+   }
+   
+   /* Toast уведомления */
+   .toast-container {
+       position: fixed;
+       bottom: 20px;
+       right: 20px;
+       z-index: 10000;
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+   }
+   
+   .toast {
+       background: #ffffff;
+       color: #3d281d;
+       padding: 15px 25px;
+       border-radius: 12px;
+       border: 1px solid #e2c08d;
+       box-shadow: 0 8px 20px rgba(61, 40, 29, 0.15);
+       font-size: 0.95em;
+       font-weight: bold;
+       min-width: 250px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       animation: slideIn 0.5s ease forwards, fadeOut 0.5s ease 2.5s forwards;
+   }
+   
+   @keyframes slideIn {
+       from { transform: translateX(120%); opacity: 0; }
+       to { transform: translateX(0); opacity: 1; }
+   }
+   
+   @keyframes fadeOut {
+       to { opacity: 0; transform: translateY(10px); }
+   }
+/* Заголовок модального окна (Корзина, Избранное, Поиск) */
+#modal-title {
+    color: #3d281d !important;
+    font-weight: 800;
+}
+
+/* Заголовок результатов поиска */
+#modal-title span {
+    color: #b8860b !important;
+}
+
+/* Название товара в поиске */
+.search-card .item-name {
+    color: #3d281d !important;
+}
+
+/* Название товара в корзине/избранном */
+.modal-item-row .item-name {
+    color: #3d281d !important;
+}
+
+/* Дополнительная страховка — весь текст внутри модалки */
+.modal-content {
+    color: #3d281d;
+}
+/*лупа*/
+.search-btn {
+    background: transparent; 
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.search-icon {
+    color: #4b2e2e; 
+    width: 22px;
+    height: 22px;
+    transition: 0.3s;
+}
+
+.search-icon:hover {
+    color: #6b3f3f;
+}
+/* Блок с кнопкой и сердцем */
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* Сердечко */
+.like-btn-card {
+    font-size: 1.6rem;
+    color: #ffd700; 
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1;
+}
+
+/* Эффект при наведении */
+.like-btn-card:hover {
+    transform: scale(1.2);
+    color: #ffcc00;
+}

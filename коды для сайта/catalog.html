@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="основной.css">
+    <link rel="stylesheet" href="2catalog.css">
+</head>
+<body>
+<div id="toast-container" class="toast-container"></div>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-text"></p>
+    </div>
+</div>
+<div class="main-container">
+    <!--шапка-->
+    <header class="navbar">
+        <div class="logo"><!--лого лев-->
+            <a href="главная.html">
+                <img src="картинки/лев.png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <nav>
+            <a href="#">О нас</a>
+            <a href="special-offer.html">Специальные предложения</a>
+            <a href="catalog.html">Каталог</a>
+        </nav>
+        <div class="icons"><!--иконки справа-->
+            <!--избранное-->
+            <svg id="btn-Избранное" class="main-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <!--корзина-->
+            <svg id="btn-Корзина" class="main-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                <path d="M3 6h18"></path>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <!--профиль-->
+            <svg id="btn-profile" class="main-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </div>
+    </header>
+</div>
+
+<main class="catalog-container">
+    <div class="top-controls">
+        <!-- Выпадающий список -->
+        <div class="custom-dropdown">
+            <div class="dropdown-header">
+                <span id="selected-value">Чистокровным</span>
+                <span class="arrow">▼</span>
+            </div>
+            <ul class="dropdown-list">
+                <li data-value="pure">Чистокровным</li>
+                <li data-value="half">Полукровкам</li>
+                <li data-value="muggle">Маглам</li>
+            </ul>
+        </div>
+            
+    
+        <!-- Поиск с лупой -->
+        <form class="search-box" id="search-form">
+            <input type="text" placeholder="Поиск" id="search-input">
+            <button type="submit" class="search-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </form>
+    </div>
+    
+    <!-- Категории с чекбоксами -->
+    <div class="filter-categories">
+        <label class="checkbox-container">
+            <input type="checkbox" checked> <span class="checkmark"></span> Новинки
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox"> <span class="checkmark"></span> Одежда
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox"> <span class="checkmark"></span> Обувь
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox"> <span class="checkmark"></span> Аксессуары
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox"> <span class="checkmark"></span> Всё
+        </label>
+    </div>
+    <div class="product-grid" id="catalog-grid">
+        <!--товары с помощью js-->
+    </div>
+</main>
+<script src="shop.js"></script>
+<script src="2catalog.js"></script>
+</body>
+</html>

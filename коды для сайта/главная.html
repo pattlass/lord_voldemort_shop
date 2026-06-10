@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lord Voldemort Shop</title>
+    <link rel="stylesheet" href="основной.css">
+    <link rel="stylesheet" href="1главная.css">
+</head>
+<body>
+<div class="main-container">
+    <!--шапка-->
+    <header class="navbar">
+        <div class="logo"><!--лого лев-->
+            <a href="главная.html">
+                <img src="картинки/лев.png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <nav>
+            <a href="#">О нас</a>
+            <a href="special-offer.html">Специальные предложения</a>
+            <a href="catalog.html">Каталог</a>
+        </nav>
+        <div class="icons"><!--иконки справа-->
+             <!--избранное-->
+            <svg id="btn-like" class="main-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <!--корзина-->
+            <svg id="btn-cart" class="main-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                <path d="M3 6h18"></path>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <!--профиль-->
+            <svg id="btn-profile" class="main-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </div>
+    </header>
+    <main class="content"><!--основной текст-->
+        <div class="text-side">
+            <h1>LORD<br>VOLDEMORT<br>SHOP</h1>
+            <a href="catalog.html" style="text-decoration: none;">
+                <button class="cta-button">ВПЕРЕД ЗА ВОЛШЕБСТВОМ</button>
+            </a>
+        </div>
+        <div class="model-side">
+            <!--квадрат с гарри-->
+            <div class="model-card">
+                <img src="картинки/гарри-поттер.png" alt="Harry" class="Harry-img">
+                <div class="spell-box">
+                    <a href="special-offer.html" style="text-decoration: none; color: inherit;">
+                        <p class="spell">ALOHOMORA</p>
+                    </a>
+                </div>
+            </div>            
+        </div>
+    </main>
+</div>
+<div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">×</span>
+      <h2 id="modal-title"></h2>
+      <div id="modal-body"></div>
+    </div>
+</div>
+<script src="shop.js"></script>
+<script src="1главная.js"></script>
+</body>
+</html>
